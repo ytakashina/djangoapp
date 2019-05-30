@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}お問合せ登録{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h3 class="page-header">お問合せ登録</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <form action="{% url 'save' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <button type="submit" class="btn btn-primary">登録</button>
+            <a href="{% url 'index' %}" class="btn btn-default">戻る</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}
